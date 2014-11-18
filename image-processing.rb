@@ -1,6 +1,8 @@
 require "pp"
-require "oily_png"
+require "chunky_png" if RUBY_ENGINE.include?("jruby")
+require "oily_png" unless RUBY_ENGINE.include?("jruby")
 require "securerandom"
+
 require_relative "lib/common"
 require_relative "lib/dotifier"
 require_relative "lib/scratchifier"
